@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #e4e5ea;
+}
+
+nav li:not(:first-child) {
+  margin-left: 30px;
+}
+
+#contacts-header .messengers {
+  margin-left: 47px;
+  display: flex;
+}
+
+#contacts-header .messengers a:not(:first-child) {
+  margin-left: 30px;
+}
+
+#contacts-footer {
+  margin-top: 20px;
+}
+
+#contacts-footer .messengers {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+#contacts-footer .messengers a:not(:first-child) {
+  margin-left: 10px;
+}
+
+.purple-light {
+  @apply w-64 h-64 opacity-50 bg-purple-700 rounded-full blur-[196px] fixed top-[107px] -right-[197px] lg:-top-[154px] lg:left-[602px];
+}
+
+.red-light {
+  @apply w-52 h-52 lg:w-80 lg:h-80 opacity-50 bg-red-800 rounded-full blur-[196px] fixed top-[342px] -left-[55px] lg:top-[251px] lg:-left-[102px];
+}
+
+.glass-gradient {
+  @apply fixed lg:hidden w-60 h-60;
+
+  background: radial-gradient(
+    304.35% 148.2% at 3.2% 3.49%,
+    rgba(255, 246, 233, 0.1) 0%,
+    rgba(26, 29, 35, 0.1) 26.62%,
+    rgba(26, 29, 35, 0.1) 52.1%,
+    rgba(26, 29, 35, 0.01) 70.17%,
+    rgba(26, 29, 35, 0) 100%
+  );
+  backdrop-filter: blur(7.5px);
+}
+
+.purple-ball {
+  @apply fixed rounded-full w-10 h-10 lg:w-[60px] lg:h-[60px] top-[236px] -right-[16px] lg:-top-[2px] lg:left-[868px];
+  background: radial-gradient(
+    82.3% 82.3% at 27.25% 26.5%,
+    rgba(236, 208, 255, 0.64) 0%,
+    rgba(161, 93, 207, 0.24) 59.67%,
+    rgba(118, 49, 164, 0.21) 78.59%,
+    rgba(86, 24, 128, 0.23) 100%
+  );
+  filter: drop-shadow(3px 6px 27px rgba(177, 118, 217, 0.25)) blur(5px);
+  backdrop-filter: blur(2px);
+}
+
+.red-ball {
+  @apply fixed rounded-full w-[43px] h-[43px] top-[500px] left-[29px] lg:w-[83px] lg:h-[83px] lg:top-[83px] lg:left-[519px];
+
+  background: radial-gradient(
+    82.3% 82.3% at 27.25% 26.5%,
+    rgba(255, 208, 208, 0.54) 0%,
+    rgba(212, 93, 93, 0.26) 59.67%,
+    rgba(167, 49, 49, 0.25) 78.59%,
+    rgba(130, 25, 25, 0.25) 100%
+  );
+  filter: drop-shadow(3px 6px 27px rgba(223, 125, 125, 0.25));
+  backdrop-filter: blur(2px);
+}
+
+.small {
+  @apply hidden lg:fixed rounded-full lg:w-7 lg:h-7 lg:top-[547px] lg:left-[851px];
+
+  filter: blur(2.5px);
+}
+
+.yellow-ball {
+  @apply fixed lg:hidden rounded-full w-[25px] h-[25px] top-[755px] left-[18px];
+
+  background: radial-gradient(
+    105.65% 105.65% at 0% 11.96%,
+    rgba(255, 233, 203, 0.57) 0%,
+    rgba(184, 131, 18, 0.45) 100%
+  );
+  stroke-width: 0.5px;
+  stroke: #fcb045;
+  box-shadow: -4px 4px 7px 0px rgba(255, 255, 255, 0.25) inset;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(2.5px);
+}
+
+.yellow-light {
+  @apply fixed lg:hidden rounded-full w-[200px] h-[200px] top-[620px] -left-[66px];
+
+  background: #fcb045;
+  opacity: 0.4;
+  filter: blur(196px);
+}
+
+.contacts-header {
+  @apply hidden lg:ml-auto lg:flex lg:items-start;
+}
+
+.footer-h6 {
+  @apply text-[#656566] text-xs lg:text-sm uppercase tracking-[0.6px] lg:tracking-[0.7px] font-bold hover:duration-100 hover:ease-out;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #fcb045, #ff3f78);
+  background-clip: text;
+  color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav li:not(:first-child, :last-child) {
+    margin-left: 0;
+  }
+
+  .red-ball {
+    filter: blur(2.5px);
+  }
+
+  #contacts-footer .messengers {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+
+  #mobile-list {
+    list-style-type: none;
+  }
+
+  #mobile-list li {
+    display: flex;
+    align-items: center;
+    height: min-content;
+  }
+
+  #mobile-list li::before {
+    content: '\2023';
+    display: inline-block;
+    width: 10px;
+    height: 1px;
+    margin-right: 0.5em;
+    background: linear-gradient(90deg, #fcb045 36.99%, #fd1d1d 100%);
+    color: transparent;
+  }
+}
